@@ -1,6 +1,9 @@
 <!doctype html>
 
 <?php
+	session_start();
+	require_once "./lib/File.php";
+
   if (!isset($_SESSION["language"])){
     $_SESSION["language"] = "fr";
   }
