@@ -10,7 +10,7 @@
 
   <body>
     <style>
-    .nav {
+    .navbar {
         font-size: .10em
     }
     </style>
