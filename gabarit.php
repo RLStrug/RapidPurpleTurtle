@@ -10,6 +10,18 @@
   if (!isset($_SESSION["encoding"])){
     $_SESSION["encoding"] = "UTF-8";
   }
+  if (!isset($_SESSION["colors"])){
+    $_SESSION["colors"] = true;
+  }
+  if (!isset($_SESSION["highContrast"])){
+    $_SESSION["highContrast"] = false;
+  }
+  if (!isset($_SESSION["font"])){
+    $_SESSION["font"] = Null;
+  }
+  if (!isset($_SESSION["font_size"])){
+    $_SESSION["font_size"] = "10pt";
+  }
 ?>
 
 <html lang=<?=$_SESSION["language"]?>>
