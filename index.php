@@ -11,7 +11,7 @@
   <body>
     <style>
     .navbar {
-        font-size: .10em
+        font-size: .100em
     }
     </style>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
