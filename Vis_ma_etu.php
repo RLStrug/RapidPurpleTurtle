@@ -16,36 +16,37 @@
 
 <?php ob_start(); ?>
 
-<script>
-var express = require('express')
-var bodyParser = require('body-parser')
-var sapcai = require('sapcai').default
+<?php
+use Sapcai\Client;
 
-var connect = new sapcai.connect('df377902032e23bf65e627d791e5fbb9')
+// Start Slim server
+$app = new \Slim\App();
 
-var app = express()
+// Instantiate the Connect Client
+$connect = Client::Connect($_ENV["df377902032e23bf65e627d791e5fbb9"]);
 
-/* Server setup */
-app.set('port', 5000)
-app.use(bodyParser.json())
-app.post('/', function(req, res) {
-  connect.handleMessage(req, res, onMessage)
-})
+//Handle / route
+$app->post('/', function ($request, $response) {
+  $connect->handleMessage($body, 'replyMessage');
+});
 
-function onMessage (message) {
+function replyMessage ($message) {
   // Get the content of the message
-  var content = message.content
+  $text = $message->content;
 
   // Get the type of the message (text, picture,...)
-  var type = message.type
+  $type = $message->type;
 
-  // Add a reply, and send it
-  message.addReply([{ type: 'text', content: 'Hello, world' }])
-  message.reply()
+  $message->addReply([(object)['type' => 'text', 'content' => 'Hello, world']]);
+
+  $message->reply();
 }
 
-app.listen(app.get('port'), function () { console.log('App is listening on port ' + app.get('port')) })
-</script>
+// Run Slim server
+$app->run();
+?>
+
+
 <script src="https://cdn.cai.tools.sap/webchat/webchat.js"
 channelId="0a6d4727-44c1-4811-b1b3-4c306b1191a6"
 token="df377902032e23bf65e627d791e5fbb9"
