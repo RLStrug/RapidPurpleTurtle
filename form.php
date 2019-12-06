@@ -33,6 +33,7 @@ $a = "name.surnam@etu.u-bordeaux.fr";
       $specialite_list = ModelSpecialite::selectAll();
 
       foreach ($specialite_list as $key => $value) {
+        echo htmlspecialchars($key). "cc" .htmlspecialchars($value);
         echo "<option>".htmlspecialchars($key). "cc" .htmlspecialchars($value)."</option>";
       }
 

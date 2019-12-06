@@ -68,7 +68,10 @@
             <a class="nav-link" href="form.php">Formulaire</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="Droit_Soutien.php">Droit et soutien</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Vis_ma_etu.php">Vis ma vie d'étudiant</a>
           </li>
         </ul>
         <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
