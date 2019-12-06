@@ -7,9 +7,6 @@
 <link rel="stylesheet" href="style.css">
 -->
 
-
-
-
 <?php $includes = ob_get_clean(); ?>
 
 
@@ -24,48 +21,6 @@ channelId="0a6d4727-44c1-4811-b1b3-4c306b1191a6"
 token="df377902032e23bf65e627d791e5fbb9"
 id="cai-webchat">
 </script>
-
-<?php
-use Sapcai\Client;
-
-// Start Slim server
-$app = new \Slim\App();
-
-// Instantiate the SAP Conversational AI Client
-$client = new Client("df377902032e23bf65e627d791e5fbb9");
-
-//Handle / route
-$app->post('/', function ($request, $response) {
-  $client->connect->handleMessage($body, 'replyMessage');
-});
-
-function replyMessage ($message) {
-  // Get the content of the message
-  $text = $message->content;
-
-  // Get the type of the message (text, picture,...)
-  $type = $message->type;
-
-  // Get the senderId, which we'll use as a conversation token.
-  $conversationToken = $message->senderId;
-
-  // If it's a text message...
-  if ($type == 'text') {
-    // ...make a request to SAP Conversational AI to get the bot reply...
-    $response = $client->request->converseText($text, [ 'conversation_token' => $conversationToken ]);
-
-    // ...extract the reply...
-    $reply = $response->reply();
-
-    // ...and send it back to the channel
-    $message->addReply([(object)['type' => 'text', 'content' => $reply]]);
-    $message->reply();
-  }
-}
-
-// Run Slim server
-$app->run();
-?>
 
 <h1> Vis ma vie d'étudiant </h1>
 
