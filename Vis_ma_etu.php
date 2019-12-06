@@ -23,7 +23,7 @@ use Sapcai\Client;
 $app = new \Slim\App();
 
 // Instantiate the Connect Client
-$connect = Client::Connect($_ENV["YOUR_REQUEST_TOKEN"]);
+$connect = Client::Connect($_ENV["df377902032e23bf65e627d791e5fbb9"]);
 
 //Handle / route
 $app->post('/', function ($request, $response) {
