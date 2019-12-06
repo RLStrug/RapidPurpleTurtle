@@ -22,16 +22,18 @@ $a = "name.surnam@etu.u-bordeaux.fr";
 ?>
 <form>
   <div class="form-group">
+    <label for="inputName">Nom</label>
+    <input type="text" class="form-control" id="inputName" placeholder="Dupont">
     <label for="inputEmail">Adresse Email Universitaire</label>
-    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="<?php echo $a;?>">
+    <input type="email" class="form-control" id="inputEmail" placeholder="<?php echo $a;?>">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
+    <label for="selectSpecciality">Example select</label>
+    <select class="form-control" id="selectSpecciality">
       <?php
 
-
       $specialite_list = array("medecine", "droit", "finance");
+
       foreach ($specialite_list as $value) {
         echo "<option>" . htmlspecialchars($value) . "</option>";
       }
