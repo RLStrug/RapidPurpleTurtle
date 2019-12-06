@@ -16,14 +16,7 @@ class Model {
         $password = Conf::getPassword();
 				$port = Conf::getPort();
         try {
-						$conStr = sprintf("pgsql:host=%s;port=%d;dbname=%s;user=%s;password=%s",
-								$hostname,
-								$port,
-								$database_name,
-								$login,
-								$password);
-
-            self::$pdo = new \PDO($conStr);
+						self::$pdo = new PDO("pgsql:host=$hostname;dbname=$database_name", $login, $password);
             self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             if (Conf::getDebug()) {
@@ -38,7 +31,7 @@ class Model {
 	public static function update($data) {
         try {
             $table_name = static::$object;
-            $class_name = 'Model' . $table_name;
+            $class_name = 'Model' . static::$class;
 
             $sql = "UPDATE $table_name SET ";
             foreach ($data as $cle => $valeur) {
@@ -63,7 +56,7 @@ class Model {
     public static function selectAll() {
         try {
             $table_name = static::$object;
-            $class_name = 'Model' . $table_name;
+            $class_name = 'Model' . static::$class;
 
             $sql = "SELECT * FROM $table_name;";
             $req_prep = Model::$pdo->query($sql);
@@ -85,7 +78,7 @@ class Model {
     public static function select($primary) {
         try {
             $table_name = static::$object;
-            $class_name = 'Model' . $table_name;
+            $class_name = 'Model' . static::$class;
 
 
             $primary_key = static::$primary;
@@ -117,7 +110,7 @@ class Model {
     public static function delete($primary) {
         try {
             $table_name = static::$object;
-            $class_name = 'Model' . $table_name;
+            $class_name = 'Model' . static::$class;
 
             $primary_key = static::$primary;
 
@@ -146,7 +139,7 @@ class Model {
         try {
             $table_name = static::$object;
 
-            $class_name = 'Model' . $table_name;
+            $class_name = 'Model' . static::$class;
             $sql = "INSERT INTO $table_name (";
 
             foreach ($data as $cle => $valeur) {
