@@ -18,7 +18,7 @@
     $_SESSION["fontSize"] = "10pt";
   }
 
-  require_once "colourScheme.php"
+  require_once "colourScheme.php";
 ?>
 
 
