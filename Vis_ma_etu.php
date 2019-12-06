@@ -16,6 +16,15 @@
 
 <?php ob_start(); ?>
 
+
+
+
+<script src="https://cdn.cai.tools.sap/webchat/webchat.js"
+channelId="0a6d4727-44c1-4811-b1b3-4c306b1191a6"
+token="df377902032e23bf65e627d791e5fbb9"
+id="cai-webchat">
+</script>
+
 <?php
 use Sapcai\Client;
 
@@ -57,13 +66,6 @@ function replyMessage ($message) {
 // Run Slim server
 $app->run();
 ?>
-
-
-<script src="https://cdn.cai.tools.sap/webchat/webchat.js"
-channelId="0a6d4727-44c1-4811-b1b3-4c306b1191a6"
-token="df377902032e23bf65e627d791e5fbb9"
-id="cai-webchat">
-</script>
 
 <h1> Vis ma vie d'étudiant </h1>
 
