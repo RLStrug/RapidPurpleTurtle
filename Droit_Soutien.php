@@ -14,7 +14,7 @@
 <?php ob_start(); ?>
 
 <h1> Droit et soutien </h1>
-<h2> <img src="./resources/gray_money.png" class="card-img-top" alt="Aide financiéres"> Aide financiéres</h2>
+<h2> <img src="./resources/gray_money.png" class="card-img-top" alt="Aide financiéres" width="10rem"> Aide financiéres</h2>
 
 <?php $content=ob_get_clean(); ?>
 
