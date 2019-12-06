@@ -14,12 +14,13 @@
 <?php ob_start(); ?>
 <?php
 require_once "./lib/File.php";
-require_once File::build_path(array('model', 'ModelSpecialite.php'));
+require_once File::build_path(array('model', 'Model.php'));
 
 
 $a = "name.surnam@etu.u-bordeaux.fr";
 
 ?>
+<!--
 <form>
   <div class="form-group">
     <label for="inputEmail">Adresse Email Universitaire</label>
@@ -45,7 +46,7 @@ $a = "name.surnam@etu.u-bordeaux.fr";
   </div>
   <button type="submit" class="btn btn-primary">Envoyer</button>
 </form>
-
+-->
 <?php $content=ob_get_clean(); ?>
 
 <?php require "gabarit.php" ?>
