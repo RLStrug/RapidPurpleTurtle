@@ -6,7 +6,11 @@
 <script src="script.js"></script>
 <link rel="stylesheet" href="style.css">
 -->
-
+<script src="https://cdn.cai.tools.sap/webchat/webchat.js"
+channelId="0a6d4727-44c1-4811-b1b3-4c306b1191a6"
+token="df377902032e23bf65e627d791e5fbb9"
+id="cai-webchat"
+></script>
 <? $includes = ob_get_clean(); ?>
 
 
