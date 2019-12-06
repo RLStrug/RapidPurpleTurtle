@@ -4,6 +4,27 @@
   session_start();
   require_once "./lib/File.php";
 
+  $languageList = [["fr","UTF-8"]];
+  $fontList = [Null, '"Comic Sans MS", "Comic Sans", cursive;'];
+
+  if (isset($_POST["languageId"]) && is_numeric($_POST["languageId"])){
+    $_SESSION["language"] = $languageList[intval($_POST["languageId"])][0];
+    $_SESSION["encoding"] = $languageList[intval($_POST["languageId"])][1];
+  } if (isset($_POST["grayscale"]) && $_POST["grayscale"] == "on"){
+    $_SESSION["grayscale"] = true;
+  } else {
+    $_SESSION["grayscale"] = false;
+  } if (isset($_POST["highContrast"]) && $_POST["highContrast"] == "on"){
+    $_SESSION["highContrast"] = true;
+  } else {
+    $_SESSION["highContrast"] = false;
+  } if (isset($_POST["fontId"]) && is_numeric($_POST["fontId"])){
+    $_SESSION["font"] = $fontList[intval($_POST["fontId"])];
+    $_SESSION["fontId"] = $_POST["fontId"];
+  } if (isset($_POST["fontSize"]) && is_numeric($_POST["fontSize"])){
+    $_SESSION["fontSize"] = $_POST["fontSize"]."pt";
+  }
+
   if (!isset($_SESSION["language"])){
     $_SESSION["language"] = "fr";
   } if (!isset($_SESSION["encoding"])){
@@ -14,7 +35,9 @@
     $_SESSION["highContrast"] = false;
   } if (!isset($_SESSION["font"])){
     $_SESSION["font"] = Null;
-  } if (!isset($_SESSION["font_size"])){
+  } if (!isset($_SESSION["fontId"])){
+    $_SESSION["fontId"] = 0;
+  } if (!isset($_SESSION["fontSize"])){
     $_SESSION["fontSize"] = "10pt";
   }
 
@@ -39,9 +62,9 @@
     <link rel="stylesheet" href="style/colours.css">
     <style>
       body{
-        <?php if ($_SESSION["font"] !== Null): ?>
-        font-family: <?$_SESSION["font"]?>;
-        <?php endif; ?>
+        <?php if ($_SESSION["font"] !== Null){ ?>
+        font-family: <?=$_SESSION["font"]?>;
+        <?php } ?>
         font-size: <?=$_SESSION["fontSize"]?>;
       }
     </style>
@@ -99,20 +122,43 @@
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-            <button type="button" class="btn btn-primary">Actualiser</button>
-          </div>
+          <form method="post">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="langInput">Language</label>
+                <select name="languageId" class="form-control" id="langInput">
+                  <option value=0 <?=$_SESSION["language"]=="fr"?"selected":""?>> Français </option>
+                </select>
+              </div>
+              <div class="form-check">
+                <input name="grayscale" type="checkbox" class="form-check-input" id="gsInput" <?=$_SESSION["grayscale"]?"checked":""?>>
+                <label for="gsInput"> Niveaux de gris </label>
+                <br>
+                <input name="highContrast" type="checkbox" class="form-check-input" id="hcInput" <?=$_SESSION["highContrast"]?"checked":""?>>
+                <label for="hcInput"> Contraste élevé </label>
+              </div>
+              <div class="form-group">
+                <label for="fontInput">Police</label>
+                <select name="fontId" class="form-control" id="fontInput">
+                  <option value=0 <?=$_SESSION["fontId"]==0?"selected":""?>> Défaut </option>
+                  <option value=1 <?=$_SESSION["fontId"]==1?"selected":""?>> Comic Sans MS </option>
+                </select>
+                <label for="fontInput">Taille</label>
+                <input name="fontSize" type="number" class="form-contol" id="fintSizeInput" value=<?=intval($_SESSION["fontSize"])?>>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary gs-bg-light-gray gs-text-dark-gray hc-bg-red bw-white" data-dismiss="modal">Annuler</button>
+              <button type="submit" class="btn btn-primary gs-bg-dark-gray hc-bg-blue bw-black">Actualiser</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
 </html>
