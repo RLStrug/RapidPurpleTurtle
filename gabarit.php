@@ -55,11 +55,13 @@
   <head>
     <meta charset=<?=$_SESSION["encoding"]?>>
     <meta name="author" content="Camy Justine, Govin Cyril, Perez Lucas, Roux Kilian, Shi Hui">
+    <meta name="viewport" content="width=device-width">
     <base href="/" target="_self">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <?=$includes?>
     <title> <?=$title?> </title>
     <link rel="stylesheet" href="style/colours.css">
+    <link rel="stylesheet" href="style/main.css">
     <style>
       body{
         <?php if ($_SESSION["font"] !== Null){ ?>
@@ -72,6 +74,7 @@
 
 
   <body class="<?=$coloursClass?>">
+    <script src="https://cdn.cai.tools.sap/webchat/webchat.js" channelId="0a6d4727-44c1-4811-b1b3-4c306b1191a6" token="df377902032e23bf65e627d791e5fbb9" id="cai-webchat"></script>
     <style>
     .navbar {
         font-size: 1.5em;

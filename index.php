@@ -14,8 +14,7 @@
 <?php ob_start(); ?>
 
 <h1> Ceci est l'accueil </h1>
-<p> Prière de circuler </p>
-<img src="resources/earth.png">
+<p> Prière de circuler pour trouver les informations que vous cherchez </p>
 
 <?php $content=ob_get_clean(); ?>
 

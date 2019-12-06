@@ -26,27 +26,13 @@ $a = "name.surnam@etu.u-bordeaux.fr";
     <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="<?php echo $a;?>">
   </div>
   <div class="form-group">
-    <label for="selectFiliere">Example select</label>
+    <label for="selectFiliere">Études</label>
     <select class="form-control" id="selectFiliere" name="selectFiliere">
       <?php
 
       $filiere_list = array("biologie", "informatique", "physique");
 
       foreach ($filiere_list as $value) {
-        echo "<option>" . htmlspecialchars($value) . "</option>";
-      }
-
-       ?>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="selectSpecciality">Example select</label>
-    <select multiple class="form-control" id="selectSpeciality" name="selectSpeciality">
-      <?php
-
-      $specialite_list = array("medecine", "droit", "finance");
-
-      foreach ($specialite_list as $value) {
         echo "<option>" . htmlspecialchars($value) . "</option>";
       }
 
