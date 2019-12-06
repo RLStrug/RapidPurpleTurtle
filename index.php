@@ -15,6 +15,7 @@
 
 <h1> Ceci est l'accueil </h1>
 <p> Prière de circuler </p>
+<img src="resources/earth.png">
 
 <?php $content=ob_get_clean(); ?>
 

@@ -9,7 +9,7 @@
   } if (!isset($_SESSION["encoding"])){
     $_SESSION["encoding"] = "UTF-8";
   } if (!isset($_SESSION["grayscale"])){
-    $_SESSION["colors"] = false;
+    $_SESSION["grayscale"] = false;
   } if (!isset($_SESSION["highContrast"])){
     $_SESSION["highContrast"] = false;
   } if (!isset($_SESSION["font"])){
@@ -32,7 +32,7 @@
   <head>
     <meta charset=<?=$_SESSION["encoding"]?>>
     <meta name="author" content="Camy Justine, Govin Cyril, Perez Lucas, Roux Kilian, Shi Hui">
-    <base href="/" target="_blank">
+    <base href="/" target="_self">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <?=$includes?>
     <title> <?=$title?> </title>
@@ -78,6 +78,13 @@
     </nav>
 
     <main>
+      <?php
+        if ($_SESSION["grayscale"]){
+          $content = preg_replace('/resources\//', 'resources\/gs_', $content);
+        } if ($_SESSION["highContrast"]){
+          $content = preg_replace('/resources\//', 'resources\/hc_', $content);
+        }
+      ?>
       <?=$content?>
     </main>
 
