@@ -16,6 +16,37 @@
 
 <?php ob_start(); ?>
 
+<?php
+use Sapcai\Client;
+
+// Start Slim server
+$app = new \Slim\App();
+
+// Instantiate the Connect Client
+$connect = Client::Connect($_ENV["YOUR_REQUEST_TOKEN"]);
+
+//Handle / route
+$app->post('/', function ($request, $response) {
+  $connect->handleMessage($body, 'replyMessage');
+});
+
+function replyMessage ($message) {
+  // Get the content of the message
+  $text = $message->content;
+
+  // Get the type of the message (text, picture,...)
+  $type = $message->type;
+
+  $message->addReply([(object)['type' => 'text', 'content' => 'Hello, world']]);
+
+  $message->reply();
+}
+
+// Run Slim server
+$app->run();
+?>
+
+
 <script src="https://cdn.cai.tools.sap/webchat/webchat.js"
 channelId="0a6d4727-44c1-4811-b1b3-4c306b1191a6"
 token="df377902032e23bf65e627d791e5fbb9"
