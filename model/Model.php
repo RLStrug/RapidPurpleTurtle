@@ -59,6 +59,7 @@ class Model {
             $class_name = 'Model' . static::$class;
 
             $sql = "SELECT * FROM $table_name;";
+						echo $sql;
             $req_prep = Model::$pdo->query($sql);
             $req_prep->setFetchMode(PDO::FETCH_CLASS, $class_name);
             $tab_p = $req_prep->fetchAll();

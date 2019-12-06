@@ -23,18 +23,17 @@ $a = "name.surnam@etu.u-bordeaux.fr";
 <form>
   <div class="form-group">
     <label for="inputEmail">Adresse Email Universitaire</label>
-    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="">
+    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="<?php echo $a;?>">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Example select</label>
     <select class="form-control" id="exampleFormControlSelect1">
       <?php
 
-      $specialite_list = ModelSpecialite::selectAll();
 
-      foreach ($specialite_list as $key => $value) {
-        echo htmlspecialchars($key). "cc" .htmlspecialchars($value);
-        echo "<option>".htmlspecialchars($key). "cc" .htmlspecialchars($value)."</option>";
+      $specialite_list = array("medecine", "droit", "finance");
+      foreach ($specialite_list as $value) {
+        echo "<option>".htmlspecialchars($key)"</option>";
       }
 
        ?>
