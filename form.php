@@ -13,14 +13,12 @@
 
 <?php ob_start(); ?>
 <?php
-require_once "./lib/File.php";
-require_once File::build_path(array('model', 'ModelSpecialite.php'));
 
 
 $a = "name.surnam@etu.u-bordeaux.fr";
 
 ?>
-<form>
+<form action="/addExpert.php" method="post">
   <div class="form-group">
     <label for="inputName">Nom</label>
     <input type="text" class="form-control" id="inputName" placeholder="Dupont">
@@ -28,8 +26,22 @@ $a = "name.surnam@etu.u-bordeaux.fr";
     <input type="email" class="form-control" id="inputEmail" placeholder="<?php echo $a;?>">
   </div>
   <div class="form-group">
+    <label for="selectFiliere">Example select</label>
+    <select class="form-control" id="selectFiliere">
+      <?php
+
+      $filiere_list = array("biologie", "informatique", "physique");
+
+      foreach ($filiere_list as $value) {
+        echo "<option>" . htmlspecialchars($value) . "</option>";
+      }
+
+       ?>
+    </select>
+  </div>
+  <div class="form-group">
     <label for="selectSpecciality">Example select</label>
-    <select class="form-control" id="selectSpecciality">
+    <select multiple class="form-control" id="selectSpeciality">
       <?php
 
       $specialite_list = array("medecine", "droit", "finance");
@@ -40,10 +52,6 @@ $a = "name.surnam@etu.u-bordeaux.fr";
 
        ?>
     </select>
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
   <button type="submit" class="btn btn-primary">Envoyer</button>
 </form>

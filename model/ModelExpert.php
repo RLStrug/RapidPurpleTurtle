@@ -24,16 +24,14 @@ class ModelExpert extends Model {
   protected static $primary = 'customer_id';
   protected static $class = "Expert";
 
-  public function __construct( $customer_id = NULL, $medecine = NULL, $finance = NULL, $droit = NULL) {
-       if (!is_null($customer_id) && !is_null($medecine) && !is_null($finance) && !is_null($droit)){
+  public function __construct( $customer_id = NULL, $customer_name = NULL, $customer_email = NULL, $customer_filiere = NULL) {
+       if (!is_null($customer_id) && !is_null($customer_name) && !is_null($customer_email) && !is_null($customer_filiere)){
          $this->$customer_id = $customer_id;
-         $this->$medecine = $medecine;
-         $this->$finance = $finance;
-         $this->$droit = $droit;
+         $this->$customer_name = $customer_name;
+         $this->$customer_email = $customer_email;
+         $this->$customer_filiere = $customer_filiere;
        }
    }
-
-
 
 }
 
