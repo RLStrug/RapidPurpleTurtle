@@ -13,10 +13,11 @@
 
 <?php ob_start(); ?>
 <?php
+$a = "name.surnam@etu.u-bordeaux.fr";
+echo $a;
 require_once "./lib/File.php";
 require_once File::build_path(array('model', 'ModelSpecialite.php'));
 
-$a = "name.surnam@etu.u-bordeaux.fr";
 
 
 ?>
