@@ -16,14 +16,7 @@ class Model {
         $password = Conf::getPassword();
 				$port = Conf::getPort();
         try {
-						$conStr = sprintf("pgsql:host=%s;port=%d;dbname=%s;user=%s;password=%s",
-								$hostname,
-								$port,
-								$database_name,
-								$login,
-								$password);
-
-            self::$pdo = new \PDO($conStr);
+						self::$pdo = new PDO("pgsql:host=$hostname;dbname=$database_name", $login, $password);
             self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             if (Conf::getDebug()) {
