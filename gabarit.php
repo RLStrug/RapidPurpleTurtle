@@ -1,25 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <?php
-	session_start();
-	require_once "./lib/File.php";
+  session_start();
+  require_once "./lib/File.php";
 
   if (!isset($_SESSION["language"])){
     $_SESSION["language"] = "fr";
-  }
-  if (!isset($_SESSION["encoding"])){
+  } if (!isset($_SESSION["encoding"])){
     $_SESSION["encoding"] = "UTF-8";
-  }
-  if (!isset($_SESSION["colors"])){
+  } if (!isset($_SESSION["colors"])){
     $_SESSION["colors"] = true;
-  }
-  if (!isset($_SESSION["highContrast"])){
+  } if (!isset($_SESSION["highContrast"])){
     $_SESSION["highContrast"] = false;
-  }
-  if (!isset($_SESSION["font"])){
+  } if (!isset($_SESSION["font"])){
     $_SESSION["font"] = Null;
-  }
-  if (!isset($_SESSION["font_size"])){
+  } if (!isset($_SESSION["font_size"])){
     $_SESSION["font_size"] = "10pt";
   }
 ?>
@@ -28,9 +23,13 @@
 
   <head>
     <meta charset=<?=$_SESSION["encoding"]?>>
+    <meta name="author" content="Camy Justine, Govin Cyril, Perez Lucas, Roux Kilian, Shi Hui">
+    <base href="http://51.83.250.108/" target="_blank">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <?=$includes?>
     <title> <?=$title?> </title>
+    <style>
+    </style>
   </head>
 
 
@@ -41,7 +40,7 @@
     }
     </style>
     <title>Page</title>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
