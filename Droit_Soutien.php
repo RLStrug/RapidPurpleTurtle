@@ -24,7 +24,7 @@
       <a href="#" class="card-link">Another link</a>
     </div>
   </div></li>
-  <li class="list-group-item"><img src="./resources/house.png" width=32 height="32" title="Bootstrap">
+  <li class="list-group-item"><img src="./resources/fort.png" width=32 height="32" title="Bootstrap">
     <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Aide au logement</h5>
@@ -42,7 +42,7 @@
       <a href="#" class="card-link">Another link</a>
     </div>
   </div></li>
-  <li class="list-group-item"><img src="./resources/gray_money.png" width=32 height="32" title="Bootstrap">
+  <li class="list-group-item"><img src="./resources/health.png" width=32 height="32" title="Bootstrap">
     <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Conseils juridiques</h5>
