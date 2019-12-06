@@ -17,31 +17,42 @@
 <?php ob_start(); ?>
 
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
 use Sapcai\Client;
 
 // Start Slim server
 $app = new \Slim\App();
 
-// Instantiate the Connect Client
-$connect = Client::Connect($_ENV["df377902032e23bf65e627d791e5fbb9"]);
+// Instantiate the SAP Conversational AI Client
+$client = new Client("df377902032e23bf65e627d791e5fbb9");
 
-// //Handle / route
-// $app->post('/', function ($request, $response) {
-//   $connect->handleMessage($body, 'replyMessage');
-// });
-//
-// function replyMessage ($message) {
-//   // Get the content of the message
-//   $text = $message->content;
-//
-//   // Get the type of the message (text, picture,...)
-//   $type = $message->type;
-//
-//   $message->addReply([(object)['type' => 'text', 'content' => 'Hello, world']]);
-//
-//   $message->reply();
-// }
+//Handle / route
+$app->post('/', function ($request, $response) {
+  $client->connect->handleMessage($body, 'replyMessage');
+});
+
+function replyMessage ($message) {
+  // Get the content of the message
+  $text = $message->content;
+
+  // Get the type of the message (text, picture,...)
+  $type = $message->type;
+
+  // Get the senderId, which we'll use as a conversation token.
+  $conversationToken = $message->senderId;
+
+  // If it's a text message...
+  if ($type == 'text') {
+    // ...make a request to SAP Conversational AI to get the bot reply...
+    $response = $client->request->converseText($text, [ 'conversation_token' => $conversationToken ]);
+
+    // ...extract the reply...
+    $reply = $response->reply();
+
+    // ...and send it back to the channel
+    $message->addReply([(object)['type' => 'text', 'content' => $reply]]);
+    $message->reply();
+  }
+}
 
 // Run Slim server
 $app->run();
