@@ -9,7 +9,7 @@
 <script>
 function egg()
 {
-document.getElementById("fort").src = "./resources/fort.png";
+  document.getElementById("fort").src = "./resources/fort.png";
 }
 </script>
 
@@ -30,7 +30,7 @@ document.getElementById("fort").src = "./resources/fort.png";
       <a href="#" class="card-link">Another link</a>
     </div>
   </div></li>
-  <li id="fort" class="list-group-item"><img src="./resources/house.png" width=32 height="32" title="Bootstrap" onclick="egg()">
+  <li class="list-group-item"><img id="fort" src="./resources/house.png" width=32 height="32" title="Bootstrap" onclick="egg()">
     <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Aide au logement</h5>
