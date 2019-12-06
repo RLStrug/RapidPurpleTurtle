@@ -8,16 +8,19 @@
     $_SESSION["language"] = "fr";
   } if (!isset($_SESSION["encoding"])){
     $_SESSION["encoding"] = "UTF-8";
-  } if (!isset($_SESSION["colors"])){
-    $_SESSION["colors"] = true;
+  } if (!isset($_SESSION["grayscale"])){
+    $_SESSION["colors"] = false;
   } if (!isset($_SESSION["highContrast"])){
     $_SESSION["highContrast"] = false;
   } if (!isset($_SESSION["font"])){
     $_SESSION["font"] = Null;
   } if (!isset($_SESSION["font_size"])){
-    $_SESSION["font_size"] = "10pt";
+    $_SESSION["fontSize"] = "10pt";
   }
+
+  require_once "colourScheme.php"
 ?>
+
 
 <html lang=<?=$_SESSION["language"]?>>
 
@@ -29,6 +32,12 @@
     <?=$includes?>
     <title> <?=$title?> </title>
     <style>
+      body{
+        <?php if ($_SESSION["font"] !== Null): ?>
+        font-family: <?$_SESSION["font"]?>;
+        <?php endif; ?>
+        font-size: <?=$_SESSION["fontSize"]?>;
+      }
     </style>
   </head>
 
@@ -36,7 +45,7 @@
   <body>
     <style>
     .navbar {
-        font-size: 17pt
+        font-size: 1.5em;
     }
     </style>
     <title>Page</title>
@@ -47,7 +56,7 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
