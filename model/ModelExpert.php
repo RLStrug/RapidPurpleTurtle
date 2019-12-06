@@ -20,7 +20,7 @@ class ModelExpert extends Model {
 	public function setDroit($droit){$this->$droit = $droit;}
 
 
-  protected static $object = "list_specialite";
+  protected static $object = "expert";
   protected static $primary = 'customer_id';
   protected static $class = "Expert";
 
