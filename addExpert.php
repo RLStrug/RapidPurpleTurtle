@@ -16,10 +16,11 @@ require_once "./lib/File.php";
 require_once File::build_path(array('model', 'ModelSpecialite.php'));
 require_once File::build_path(array('model', 'ModelExpert.php'));
 
-if(isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['selectSpeciality']) ){
-$name = $_POST['inputName']);
-$email = $_POST['inputEmail']);
-$speciality = $_POST['selectSpeciality']);
+if(isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['selectFiliere']) && isset($_POST['selectSpeciality']) ){
+$name = $_POST['inputName'];
+$email = $_POST['inputEmail'];
+$filiere = $_POST['selectFiliere'];
+$speciality = $_POST['selectSpeciality'];
 
 $data = array(
   "customer_name" => $name,
