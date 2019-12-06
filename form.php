@@ -13,7 +13,7 @@
 
 <?php ob_start(); ?>
 <?php
-
+require_once "./lib/File.php";
 require_once File::build_path(array('model', 'ModelSpecialite.php'));
 
 $a = "name.surnam@etu.u-bordeaux.fr";
@@ -33,7 +33,7 @@ $a = "name.surnam@etu.u-bordeaux.fr";
       $specialite_list = ModelSpecialite::selectAll();
 
       foreach ($specialite_list as $key => $value) {
-        echo "<option>".htmlspecialchars($key). "cc" .htmlspecialchars($value)."</option>"
+        echo "<option>".htmlspecialchars($key). "cc" .htmlspecialchars($value)."</option>";
       }
 
        ?>
