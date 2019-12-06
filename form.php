@@ -1,16 +1,5 @@
 <?php $title = "Formulaire"; ?>
 
-<!--
-<?php ob_start(); ?>
-
-
-<script src="script.js"></script>
-<link rel="stylesheet" href="style.css">
-
-
-<? $includes = ob_get_clean(); ?>
--->
-
 
 <?php ob_start(); ?>
 <?php
