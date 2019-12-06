@@ -33,7 +33,7 @@ $a = "name.surnam@etu.u-bordeaux.fr";
 
       $specialite_list = array("medecine", "droit", "finance");
       foreach ($specialite_list as $value) {
-        echo "<option>".htmlspecialchars($key)"</option>";
+        echo "<option>" . htmlspecialchars($value) . "</option>";
       }
 
        ?>
