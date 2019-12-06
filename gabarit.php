@@ -18,7 +18,12 @@
     $_SESSION["fontSize"] = "10pt";
   }
 
-  require_once "colourScheme.php";
+  $coloursClass = "";
+  if ($_SESSION["grayscale"]){
+    $coloursClass .= "grayscale";
+  } if ($_SESSION["highContrast"]){
+    $coloursClass .= " high-contrast";
+  }
 ?>
 
 
@@ -27,10 +32,11 @@
   <head>
     <meta charset=<?=$_SESSION["encoding"]?>>
     <meta name="author" content="Camy Justine, Govin Cyril, Perez Lucas, Roux Kilian, Shi Hui">
-    <base href="http://51.83.250.108/" target="_blank">
+    <base href="/" target="_blank">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <?=$includes?>
     <title> <?=$title?> </title>
+    <link rel="stylesheet" href="style/colours.css">
     <style>
       body{
         <?php if ($_SESSION["font"] !== Null): ?>
@@ -42,14 +48,14 @@
   </head>
 
 
-  <body>
+  <body class="<?=$coloursClass?>">
     <style>
     .navbar {
         font-size: 1.5em;
     }
     </style>
     <title>Page</title>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary hc-bg-blue gs-bg-dark-gray bw-black" >
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
