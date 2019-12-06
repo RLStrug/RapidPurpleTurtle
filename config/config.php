@@ -6,7 +6,8 @@ class Conf {
         'hostname' => 'localhost',
         'database_name' => 'expert',
         'login' => 'admin',
-        'password' => 'toto'
+        'password' => 'toto',
+        'port' => 3306
     );
     static public function getDebug() {
         return self::$debug;
@@ -22,6 +23,9 @@ class Conf {
     }
     static public function getPassword() {
         return self::$databases['password'];
+    }
+    static public function getPort() {
+        return self::$databases['port'];
     }
 }
 ?>
