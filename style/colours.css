@@ -1,0 +1,52 @@
+/* grayscale colours */
+body.grayscale .gs-bg-white{ background-color: #fff !important; }
+body.grayscale .gs-text-white{ color: #fff !important; }
+
+body.grayscale .gs-bg-black{ background-color: #000 !important; }
+body.grayscale .gs-text-black{ color: #000 !important; }
+
+body.grayscale .gs-bg-light-gray{ background-color: #f8f9fa !important; }
+body.grayscale .gs-text-light-gray{ color: #f8f9fa !important; }
+
+body.grayscale .gs-bg-gray{ background-color: #6c757d !important; }
+body.grayscale .gs-text-gray{ color: #6c757d !important; }
+
+body.grayscale .gs-bg-dark-gray{ background-color: #343a40 !important; }
+body.grayscale .gs-text-dark-gray{ color: #343a40 !important; }
+
+
+/* high contrast colours */
+body.high-contrast .hc-bg-red{ background-color: #f00 !important; }
+body.high-contrast .hc-text-red{ color: #f00 !important; }
+
+body.high-contrast .hc-bg-green{ background-color: #0f0 !important; }
+body.high-contrast .hc-text-green{ color: #0f0 !important; }
+
+body.high-contrast .hc-bg-blue{ background-color: #00f !important; }
+body.high-contrast .hc-text-blue{ color: #00f !important; }
+
+body.high-contrast .hc-bg-yellow{ background-color: #ff0 !important; }
+body.high-contrast .hc-text-yellow{ color: #ff0 !important; }
+
+body.high-contrast .hc-bg-magenta{ background-color: #f0f !important; }
+body.high-contrast .hc-text-magenta{ color: #f0f !important; }
+
+body.high-contrast .hc-bg-cyan{ background-color: #0ff !important; }
+body.high-contrast .hc-text-cyan{ color: #0ff !important; }
+
+body.high-contrast .hc-bg-white{ background-color: #fff !important; }
+body.high-contrast .hc-text-white{ color: #fff !important; }
+
+body.high-contrast .hc-bg-black{ background-color: #000 !important; }
+body.high-contrast .hc-text-black{ color: #000 !important; }
+
+
+/* black and white (high contrast and grayscale) */
+body.high-contrast.grayscale .bw-white{
+  background-color: #fff !important;
+  color: #000 !important;
+}
+body.high-contrast.grayscale .bw-black{
+  background-color: #000 !important;
+  color: #fff !important;
+}
