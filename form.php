@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="style.css">
 -->
 
-<? $includes = ob_get_clean(); ?>
+<?php $includes = ob_get_clean(); ?>
 
 
 <?php ob_start(); ?>
