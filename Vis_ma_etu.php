@@ -26,22 +26,22 @@ $app = new \Slim\App();
 // Instantiate the Connect Client
 $connect = Client::Connect($_ENV["df377902032e23bf65e627d791e5fbb9"]);
 
-//Handle / route
-$app->post('/', function ($request, $response) {
-  $connect->handleMessage($body, 'replyMessage');
-});
-
-function replyMessage ($message) {
-  // Get the content of the message
-  $text = $message->content;
-
-  // Get the type of the message (text, picture,...)
-  $type = $message->type;
-
-  $message->addReply([(object)['type' => 'text', 'content' => 'Hello, world']]);
-
-  $message->reply();
-}
+// //Handle / route
+// $app->post('/', function ($request, $response) {
+//   $connect->handleMessage($body, 'replyMessage');
+// });
+//
+// function replyMessage ($message) {
+//   // Get the content of the message
+//   $text = $message->content;
+//
+//   // Get the type of the message (text, picture,...)
+//   $type = $message->type;
+//
+//   $message->addReply([(object)['type' => 'text', 'content' => 'Hello, world']]);
+//
+//   $message->reply();
+// }
 
 // Run Slim server
 $app->run();
