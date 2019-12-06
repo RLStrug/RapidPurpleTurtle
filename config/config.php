@@ -1,12 +1,12 @@
 <?php
 cass Conf {
     static private $debug = true;
-	
+
     static private $databases = array(
         'hostname' => 'localhost',
-        'database_name' => 'ChiCI',
-        'login' => 'root',
-        'password' => ''
+        'database_name' => 'expert',
+        'login' => 'admin',
+        'password' => 'toto'
     );
     static public function getDebug() {
         return self::$debug;
