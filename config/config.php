@@ -1,5 +1,5 @@
 <?php
-cass Conf {
+class Conf {
     static private $debug = true;
 
     static private $databases = array(
