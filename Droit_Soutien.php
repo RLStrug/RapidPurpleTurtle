@@ -15,11 +15,51 @@
 
 <h1> Droit et soutien </h1>
 <ul class="list-group">
-  <li class="list-group-item"><img src="./resources/money.png" width=32 height="32" title="Bootstrap">  -  Aide financiéres</li>
-  <li class="list-group-item"><img src="./resources/house.png" width=32 height="32" title="Bootstrap">  -  Aide au logement</li>
-  <li class="list-group-item"><img src="./resources/help.png" width=32 height="32" title="Bootstrap">  -  Se soigner à moindre coût</li>
-  <li class="list-group-item"><img src="./resources/gray_money.png" width=32 height="32" title="Bootstrap">  -  Conseils juridiques</li>
-  <li class="list-group-item"><img src="./resources/earth.png" width=32 height="32" title="Bootstrap">  -  Migrant/Réfugiés/Demandeur d'asile</li>
+  <li class="list-group-item"><img src="./resources/money.png" width=32 height="32" title="Bootstrap">
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Aide financiéres</h5>
+      <p class="card-text">Explication .</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div></li>
+  <li class="list-group-item"><img src="./resources/house.png" width=32 height="32" title="Bootstrap">
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Aide au logement</h5>
+      <p class="card-text">Explication .</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div></li>
+  <li class="list-group-item"><img src="./resources/help.png" width=32 height="32" title="Bootstrap">
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Se soigner à moindre coût</h5>
+      <p class="card-text">Explication .</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div></li>
+  <li class="list-group-item"><img src="./resources/gray_money.png" width=32 height="32" title="Bootstrap">
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Conseils juridiques</h5>
+      <p class="card-text">Explication .</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div></li>
+  <li class="list-group-item"><img src="./resources/earth.png" width=32 height="32" title="Bootstrap">
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Migrant/Réfugiés/Demandeur d'asile</h5>
+      <p class="card-text">Explication .</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div></li>
 </ul>
 
 
