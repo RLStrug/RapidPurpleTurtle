@@ -18,16 +18,16 @@
 $a = "name.surnam@etu.u-bordeaux.fr";
 
 ?>
-<form action="/addExpert.php" method="post">
+<form action="addExpert.php" method="post">
   <div class="form-group">
     <label for="inputName">Nom</label>
-    <input type="text" class="form-control" id="inputName" placeholder="Dupont">
+    <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Dupont">
     <label for="inputEmail">Adresse Email Universitaire</label>
-    <input type="email" class="form-control" id="inputEmail" placeholder="<?php echo $a;?>">
+    <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="<?php echo $a;?>">
   </div>
   <div class="form-group">
     <label for="selectFiliere">Example select</label>
-    <select class="form-control" id="selectFiliere">
+    <select class="form-control" id="selectFiliere" name="selectFiliere">
       <?php
 
       $filiere_list = array("biologie", "informatique", "physique");
@@ -41,7 +41,7 @@ $a = "name.surnam@etu.u-bordeaux.fr";
   </div>
   <div class="form-group">
     <label for="selectSpecciality">Example select</label>
-    <select multiple class="form-control" id="selectSpeciality">
+    <select multiple class="form-control" id="selectSpeciality" name="selectSpeciality">
       <?php
 
       $specialite_list = array("medecine", "droit", "finance");
